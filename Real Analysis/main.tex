@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{exdef}{Example}[defn]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{exercise}{Exercise}[section]
+
+
+\title{OverView on Sequences}
+\author{ATRAJIT SARKAR}
+\date{September 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\begin{defn}
+    Let $f:\mathcal{A}\rightarrow \mathcal{X}$, where $\mathcal{X}$ is any set and $\mathcal{A}$ is a countable set. In general we take $\mathcal{A}=\mathbb{N}$.This function is called a sequence.
+\end{defn}
+
+Yes. Nothing more. This is just the definition. There is no condition on that function. \\
+\begin{exdef}
+    Take $f:\mathbb{N}\rightarrow \mathbb{R}$ defined by $f(n)=(-1)^n\frac{1}{\sqrt{n}}$.Here, you can see that we have the domain, the natural numbers.
+\end{exdef}
+
+\begin{exdef}
+    Take $f:\mathbf{N}\rightarrow \mathbb{Q}^c$ defined by $f(n)=\sqrt{2\sqrt{2\sqrt{2 \cdots(n times)}}}$.
+\end{exdef}
+
+\begin{exdef}
+    $f(n)=n$ where $f:\mathbb{N}\rightarrow \mathbb{N}$.
+\end{exdef}
+
+\textbf{Note:} According to the range we say the sequence is of the set $\mathcal{X}$. For example, in example 1 we have the sequence of real numbers in example 2 we have the sequence of irrational numbers and in example 3 above we have the sequence of natural numbers.\\
+
+\textbf{Notaion:} We denote a sequence as $\{a_n\}_{n\geq 1}$ and we map like that $f(n)=a_n$. We say $a_n$ is the sequence's $n^{th}$ term. \\
+Now, we have an important theorem of sequences.
+
+\begin{theorem}
+    For a monotonically increasing or decreasing sequence if it is bounded above or below respectively then it is convergent to its LUB or GLB of the sequence set respectively.
+\end{theorem}
+
+\begin{proof}
+    To prove this, we need to recall the definition of LUB and GLB and what monotonically increasing or decreasing means.
+    Hoping you know these let's begin the proof. \\\\
+    Consider a sequence $\{a_n\}$ which is monotonically increasing and let the sequence be bounded above by l(LUB of the set $\{a_n\}$ is l). \\\\
+    Now, we have, according to the definition of LUB, for every $\varepsilon >0$ $\exists x \in \{a_n\}$ such that $l-\varepsilon <x$. And as $x \in \{a_n\}$ $\exists N \in \mathbb{N}$ such that $x=a_N$. Interestingly, the sequence is increasing so, here comes the killer blow:\\\\
+    $\forall n\geq N$, $l+\varepsilon>l>a_n>a_N>l-\varepsilon$. Then hurrah! You get $\forall \varepsilon >0$ a $N  \in \mathbb{N}$ such that $l-\varepsilon <a_n<l+\varepsilon$. That is $|a_n-l|<\varepsilon$. Then according to the definition of limits, you get,
+    $$\lim_{n \to \infty}a_n=l$$
+\end{proof}
+
+\begin{exercise}
+    Try to replicate the above proof for decreasing sequence.
+\end{exercise}
+
+\end{document}
